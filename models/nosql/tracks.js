@@ -33,14 +33,14 @@ const TracksScheme = new mongoose.Schema(
     },
     duration: {
       start: {
-        type: Number,
+        type:Number,
       },
       end: {
-        type: Number,
+        type:Number,
       },
     },
     mediaId: {
-      type: String,
+      type: mongoose.Types.ObjectId,
     },
   },
   {

@@ -6,7 +6,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.json()) // esto es para que pueda recibir json y guardar
-app.use(express.static("storage"))
+app.use(express.static("storage"))// recursos publicos lo saque del storage
 
 const port = process.env.PORT || 3000
 // aqui invocamos a las rutas |😎
