@@ -1,15 +1,28 @@
-const mongoose = require("mongoose");
 const { tracksModel } = require("../models");
 
 const getItems = async (req, res) => {
-    const data = await tracksModel.find({})
-    res.send({data})
+
+
+    try {
+        const data = await tracksModel.find({})
+        res.send({data})
+        
+    } catch (error) {
+        handleHttpError(res, 'Error_get_items')
+    }
 };
 
 const createItems = async(req, res) => {
-    const { body } = req;
-     const data = await tracksModel.create(body)
-     res.send({data})
+    try {
+        
+        const { body } = req;
+         const data = await tracksModel.create(body)
+         res.send({data})
+    } catch (error) {
+        handleHttpError(res, 'Error_creando')
+    }
+
+
 };
 
 const updateItems = (req, res) => {}
